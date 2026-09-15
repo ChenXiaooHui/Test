@@ -1,0 +1,13 @@
+payload:
+#  样例
+#  - DOMAIN-SUFFIX,baidu.com
+
+#  Emotn UI天气直连
+  - DOMAIN-SUFFIX,pandahead.net
+  - DOMAIN-SUFFIX,blessingpro.com
+  - DOMAIN-SUFFIX,dangsfly.com
+
+#  微力同步
+  - DOMAIN-SUFFIX,verysync.cn
+
+

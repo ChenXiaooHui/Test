@@ -1,0 +1,6 @@
+payload:
+#  - DOMAIN-SUFFIX,baidu.com
+
+# 访问国外DNS时使用代理
+  - IP-CIDR,1.1.1.1/32,no-resolve
+  - IP-CIDR,8.8.8.8/32,no-resolve
