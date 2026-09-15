@@ -1,6 +1,7 @@
 payload:
+#  鏍蜂緥
 #  - DOMAIN-SUFFIX,baidu.com
 
-# 访问国外DNS时使用代理
+# 杩滅▼DNS鏈嶅姟鍣ㄥ己鍒惰蛋浠ｇ悊
   - IP-CIDR,1.1.1.1/32,no-resolve
   - IP-CIDR,8.8.8.8/32,no-resolve
