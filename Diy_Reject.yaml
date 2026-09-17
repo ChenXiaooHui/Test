@@ -1,3 +1,6 @@
 payload:
 #  样例
 #  - DOMAIN-SUFFIX,baidu.com
+
+#  阻止WPS Office连接激活认证服务器
+  - DOMAIN-SUFFIX,snauth.wps.cn
