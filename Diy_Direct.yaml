@@ -12,3 +12,5 @@ payload:
 
 #  KingShot游戏直连
   - DOMAIN-SUFFIX,chosenonegames.com
+  - DOMAIN-SUFFIX,centurygame.com
+  - DOMAIN-SUFFIX,centurygames.net
