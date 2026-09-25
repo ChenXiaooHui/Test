@@ -25,3 +25,7 @@ payload:
   - DOMAIN-SUFFIX,centurygames.com
   - DOMAIN-SUFFIX,centurygame.net
   - DOMAIN-SUFFIX,centurygames.net
+
+#  光源万创
+  - DOMAIN-SUFFIX,chengtakj.com
+  - DOMAIN-SUFFIX,yingnankj.com
