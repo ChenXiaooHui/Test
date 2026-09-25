@@ -9,7 +9,7 @@ payload:
   - DOMAIN-SUFFIX,sundiro.com
 
 # NAT类型在线检测
-  - DOMAIN-SUFFIX,natchecker
+  - DOMAIN-SUFFIX,natchecker.com
 
 #  Emotn UI天气直连
   - DOMAIN-SUFFIX,pandahead.net
