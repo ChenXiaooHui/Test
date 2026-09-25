@@ -2,6 +2,15 @@ payload:
 #  样例
 #  - DOMAIN-SUFFIX,baidu.com
 
+# 顶级机场
+  - DOMAIN-SUFFIX,dash.djjc.cfd
+
+# 新大洲协同办公系统
+  - DOMAIN-SUFFIX,sundiro.com
+
+# NAT类型在线检测
+  - DOMAIN-SUFFIX,natchecker
+
 #  Emotn UI天气直连
   - DOMAIN-SUFFIX,pandahead.net
   - DOMAIN-SUFFIX,blessingpro.com
