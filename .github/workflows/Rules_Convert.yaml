@@ -38,6 +38,8 @@ jobs:
               sb_rules = []
               for line in unique_lines:
                   typ, val = line.split(",",1)
+                  # 自动移除 ,no-resolve 后缀
+                  val = val.split(",no-resolve")[0]
                   if typ == "DOMAIN":
                       sb_rules.append({"domain":[val]})
                   elif typ == "DOMAIN-SUFFIX":
