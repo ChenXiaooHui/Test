@@ -1,36 +1,72 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
+name: Clash RuleSet Auto Convert to Sing-box
+run-name: Auto convert Diy_Direct.yaml to sing-box rule-set json
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    paths:
+      - 'Diy_Direct.yaml'
+  workflow_dispatch: # 支持网页手动触发
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  convert:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    permissions:
+      contents: write # 关键权限，允许bot提交生成的json
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Run convert script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          python << 'EOF'
+          import yaml, json
+          clash_file = "Diy_Direct.yaml"
+          sb_file = "Diy_Direct.json"
+
+          with open(clash_file, "r", encoding="utf-8") as f:
+              data = yaml.safe_load(f)
+          payload = data.get("payload", [])
+
+          # 自动去重
+          unique_lines = list(dict.fromkeys(payload))
+          sb_rules = []
+          for line in unique_lines:
+              typ, val = line.split(",",1)
+              if typ == "DOMAIN":
+                  sb_rules.append({"domain":[val]})
+              elif typ == "DOMAIN-SUFFIX":
+                  sb_rules.append({"domain_suffix":[val]})
+              elif typ == "DOMAIN-KEYWORD":
+                  sb_rules.append({"domain_keyword":[val]})
+              elif typ == "IP-CIDR":
+                  sb_rules.append({"ip_cidr":[val]})
+              elif typ == "IP-CIDR6":
+                  sb_rules.append({"ip_cidr6":[val]})
+
+          sb_out = {
+            "version":1,
+            "rules": sb_rules
+          }
+          with open(sb_file, "w", encoding="utf-8") as f:
+              json.dump(sb_out, f, ensure_ascii=False, indent=2)
+          print(f"Converted OK, removed duplicates -> {sb_file}")
+          EOF
+
+      - name: Commit & Push generated json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Diy_Direct.json
+          if git diff --quiet --cached; then
+            echo "No change, skip commit"
+          else
+            git commit -m "Auto update sing-box ruleset from Diy_Direct.yaml"
+            git push
+          fi
