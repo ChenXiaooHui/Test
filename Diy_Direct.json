@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "dash.djjc.cfd"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "sundiro.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "natchecker.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "pandahead.net"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "blessingpro.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "dangsfly.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "verysync.cn"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "chosenonegames.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "centurygame.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "centurygames.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "centurygame.net"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "centurygames.net"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "chengtakj.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "yingnankj.com"
+      ]
+    }
+  ]
+}
