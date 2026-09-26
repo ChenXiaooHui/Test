@@ -1,0 +1,69 @@
+name: Clash YAML to Sing-box RuleSet Converter
+run-name: Auto convert Diy rules to sing-box json
+on:
+  push:
+    paths:
+      - 'Diy_*.yaml'  # 只要这3个yaml任意一个改动，就触发
+  workflow_dispatch: # 网页手动一键运行全部转换
+
+jobs:
+  convert-all:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Batch convert all Diy yaml files
+        run: |
+          python << 'EOF'
+          import yaml, json, glob
+          # 匹配所有 Diy_*.yaml
+          yaml_files = glob.glob("Diy_*.yaml")
+          for yml_path in yaml_files:
+              with open(yml_path, "r", encoding="utf-8") as f:
+                  data = yaml.safe_load(f)
+              payload = data.get("payload", [])
+              # 去重
+              unique_lines = list(dict.fromkeys(payload))
+              sb_rules = []
+              for line in unique_lines:
+                  typ, val = line.split(",",1)
+                  if typ == "DOMAIN":
+                      sb_rules.append({"domain":[val]})
+                  elif typ == "DOMAIN-SUFFIX":
+                      sb_rules.append({"domain_suffix":[val]})
+                  elif typ == "DOMAIN-KEYWORD":
+                      sb_rules.append({"domain_keyword":[val]})
+                  elif typ == "IP-CIDR":
+                      sb_rules.append({"ip_cidr":[val]})
+                  elif typ == "IP-CIDR6":
+                      sb_rules.append({"ip_cidr6":[val]})
+              # 输出同名json
+              json_path = yml_path.replace(".yaml", ".json")
+              out = {"version":1, "rules": sb_rules}
+              with open(json_path, "w", encoding="utf-8") as f:
+                  json.dump(out, f, ensure_ascii=False, indent=2)
+              print(f"✅ {yml_path} -> {json_path}")
+          EOF
+
+      - name: Commit and push generated json files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Diy_*.json
+          if git diff --quiet --cached; then
+            echo "No changes, skip commit"
+          else
+            git commit -m "Auto update sing-box rules: Diy_Direct / Diy_Proxy / Diy_Reject"
+            git push
+          fi
