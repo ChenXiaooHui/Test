@@ -27,4 +27,4 @@ payload:
   - '+.playfabapi.com'
   
   # STUN
-  - 'stun.l.google.com'
+  - '+.stun.'
