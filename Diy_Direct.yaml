@@ -25,8 +25,7 @@ payload:
   - DOMAIN-SUFFIX,centurygames.com
   - DOMAIN-SUFFIX,centurygame.net
   - DOMAIN-SUFFIX,centurygames.net
-  - DOMAIN-SUFFIX,helpshift.com
-  - IP-CODR,138.199.35.216
+  - DOMAIN-SUFFIX,ilivedata.com
 
 #  光源万创
   - DOMAIN-SUFFIX,chengtakj.com
