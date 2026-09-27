@@ -3,9 +3,10 @@ run-name: Auto convert Diy rules to sing-box json
 on:
   push:
     paths:
-      - 'Diy_*.yaml'  # 只要这3个yaml任意一个改动，就触发
+      - 'Diy_Direct.yaml'
+      - 'Diy_Proxy.yaml'
+      - 'Diy_Reject.yaml'
   workflow_dispatch: # 网页手动一键运行全部转换
-
 jobs:
   convert-all:
     runs-on: ubuntu-latest
@@ -14,22 +15,28 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install PyYAML
         run: pip install pyyaml
-
       - name: Batch convert all Diy yaml files
         run: |
           python << 'EOF'
-          import yaml, json, glob
-          # 匹配所有 Diy_*.yaml
-          yaml_files = glob.glob("Diy_*.yaml")
+          import yaml, json
+          # 白名单，只处理这3个文件
+          yaml_files = [
+              "Diy_Direct.yaml",
+              "Diy_Proxy.yaml",
+              "Diy_Reject.yaml"
+          ]
           for yml_path in yaml_files:
+              # 文件不存在就跳过，不报错
+              import os
+              if not os.path.exists(yml_path):
+                  print(f"⚠️ {yml_path} not found, skip")
+                  continue
               with open(yml_path, "r", encoding="utf-8") as f:
                   data = yaml.safe_load(f)
               payload = data.get("payload", [])
@@ -57,7 +64,6 @@ jobs:
                   json.dump(out, f, ensure_ascii=False, indent=2)
               print(f"✅ {yml_path} -> {json_path}")
           EOF
-
       - name: Commit and push generated json files
         run: |
           git config --global user.name "github-actions[bot]"
