@@ -15,7 +15,8 @@ payload:
   - '+.pool.ntp.org'
   - 'ntp.aliyun.com'
   
-  # 小米手机天气更新
+  # 小米手机API
+  - '+.pandora.xiaomi.com'
   - '+.market.xiaomi.com'
     
   # OCSP
