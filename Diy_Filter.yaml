@@ -3,6 +3,9 @@ payload:
   - '+.lan'
   - '+.local'
   - '+.home.arpa'
+
+  # STUN
+  - '+.stun.'
   
   # Windows网络检测
   - '+.msftconnecttest.com'
@@ -12,11 +15,14 @@ payload:
   - '+.pool.ntp.org'
   - 'ntp.aliyun.com'
   
+  # 小米手机天气更新
+  - '+.market.xiaomi.com'
+    
   # OCSP
   - '+.ocsp.apple.com'
   - '+.ocsp.microsoft.com'
   
-  # KingShot
+  # KingShot游戏
 #  - '+.chosenonegames.com'
 #  - '+.centurygame.com'
 #  - '+.centurygames.com'
@@ -26,5 +32,6 @@ payload:
 #  - '+.kingshotgame.com'
 #  - '+.playfabapi.com'
   
-  # STUN
-  - '+.stun.'
+
+
+
