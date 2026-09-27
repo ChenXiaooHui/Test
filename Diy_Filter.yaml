@@ -17,14 +17,14 @@ payload:
   - '+.ocsp.microsoft.com'
   
   # KingShot
-  - '+.chosenonegames.com'
-  - '+.centurygame.com'
-  - '+.centurygames.com'
-  - '+.centurygame.net'
-  - '+.centurygames.net'
-  - '+.kingshot.net'
-  - '+.kingshotgame.com'
-  - '+.playfabapi.com'
+#  - '+.chosenonegames.com'
+#  - '+.centurygame.com'
+#  - '+.centurygames.com'
+#  - '+.centurygame.net'
+#  - '+.centurygames.net'
+#  - '+.kingshot.net'
+#  - '+.kingshotgame.com'
+#  - '+.playfabapi.com'
   
   # STUN
   - '+.stun.'
