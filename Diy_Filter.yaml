@@ -24,15 +24,12 @@ payload:
   - '+.ocsp.microsoft.com'
   
   # KingShot游戏
-#  - '+.chosenonegames.com'
-#  - '+.centurygame.com'
-#  - '+.centurygames.com'
-#  - '+.centurygame.net'
-#  - '+.centurygames.net'
-#  - '+.kingshot.net'
-#  - '+.kingshotgame.com'
-#  - '+.playfabapi.com'
-  
+  - '+.chosenonegames.com'
+  - '+.centurygame.com'
+  - '+.centurygames.com'
+  - '+.centurygame.net'
+  - '+.centurygames.net'
+  - '+.ilivedata.com'
 
 
 
