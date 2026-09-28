@@ -5,10 +5,8 @@ payload:
   - '+.home.arpa'
 
   # STUN
-  - '+.stun.*.*'
-  - '+.stun.*.*.*'
-  - '+.stun.*.*.*.*'
-  - '+.stun.*.*.*.*.*'
+  - 'stun.+'
+  - '+.stun.+'
 
   # 微力同步
   - '+.verysync.cn'
