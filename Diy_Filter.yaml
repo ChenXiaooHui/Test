@@ -5,7 +5,9 @@ payload:
   - '+.home.arpa'
 
   # STUN
-  - '+.stun.'
+  - '+.stun.*.*'
+  - '+.stun.*.*.*'
+  - '+.stun.*.*.*.*'
   
   # Windows网络检测
   - '+.msftconnecttest.com'
