@@ -5,17 +5,13 @@ payload:
   - '+.home.arpa'
 
   # STUN
-  - '+.stun.+'
   - '+.stun.*.*'
   - '+.stun.*.*.*'
-  - 'stun.*'
-  - 'stun.*.*'
-  - 'stun.*.*.*'
-  - 'stun.*.*.*.*'
+  - '+.stun.*.*.*.*'
+  - '+.stun.*.*.*.*.*'
 
   # 微力同步
   - '+.verysync.cn'
-  - '+.verysync.com'
   
   # Windows网络检测
   - '+.msftconnecttest.com'
