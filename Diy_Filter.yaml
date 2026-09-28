@@ -5,6 +5,10 @@ payload:
   - '+.home.arpa'
 
   # STUN
+  - '+.stun.+'
+  - '+.stun.*.*'
+  - '+.stun.*.*.*'
+  - 'stun.*'
   - 'stun.*.*'
   - 'stun.*.*.*'
   - 'stun.*.*.*.*'
