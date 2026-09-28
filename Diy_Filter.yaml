@@ -11,6 +11,7 @@ payload:
 
   # 微力同步
   - '+.verysync.cn'
+  - '+.verysync.com'
   
   # Windows网络检测
   - '+.msftconnecttest.com'
