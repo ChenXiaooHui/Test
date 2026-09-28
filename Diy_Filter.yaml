@@ -8,6 +8,9 @@ payload:
   - 'stun.*.*'
   - 'stun.*.*.*'
   - 'stun.*.*.*.*'
+
+  # 微力同步
+  - '+.verysync.cn'
   
   # Windows网络检测
   - '+.msftconnecttest.com'
