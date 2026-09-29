@@ -5,8 +5,16 @@ payload:
   - '+.home.arpa'
 
   # STUN
-  - 'stun.+'
-  - '+.stun.+'
+  - 'stun.*'
+  - 'stun.*.*'
+  - 'stun.*.*.*'
+  - 'stun.*.*.*.*'
+  - 'stun.*.*.*.*.*'
+  - '+.stun.*'
+  - '+.stun.*.*'
+  - '+.stun.*.*.*'
+  - '+.stun.*.*.*.*'
+  - '+.stun.*.*.*.*.*'
 
   # 微力同步
   - '+.verysync.cn'
@@ -24,10 +32,9 @@ payload:
   - '+.market.xiaomi.com'
   
   # KingShot游戏
-  - '+.chosenonegame.+'
-  - '+.chosenonegames.+'
-  - '+.centurygame.+'
-  - '+.centurygames.+'
+  - '+.chosenonegames.*'
+  - '+.centurygame.*'
+  - '+.centurygames.*'
 
 
 
