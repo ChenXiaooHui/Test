@@ -26,12 +26,12 @@ payload:
   - DST-PORT,22067
 
 #  KingShot游戏直连
-#  - DOMAIN-SUFFIX,chosenonegames.com
-#  - DOMAIN-SUFFIX,centurygame.com
-#  - DOMAIN-SUFFIX,centurygames.com
-#  - DOMAIN-SUFFIX,centurygame.net
-#  - DOMAIN-SUFFIX,centurygames.net
-#  - DOMAIN-SUFFIX,ilivedata.com
+  - DOMAIN-SUFFIX,chosenonegames.com
+  - DOMAIN-SUFFIX,centurygame.com
+  - DOMAIN-SUFFIX,centurygames.com
+  - DOMAIN-SUFFIX,centurygame.net
+  - DOMAIN-SUFFIX,centurygames.net
+  - DOMAIN-SUFFIX,ilivedata.com
 
 #  光源万创
   - DOMAIN-SUFFIX,chengtakj.com
