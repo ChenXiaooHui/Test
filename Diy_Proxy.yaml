@@ -5,3 +5,5 @@ payload:
 # 远程DNS服务器强制走代理
   - IP-CIDR,1.1.1.1/32,no-resolve
   - IP-CIDR,8.8.8.8/32,no-resolve
+
+  - DOMAIN-SUFFIX,chosenonegames.com,♻️ 自动选择_订阅2
