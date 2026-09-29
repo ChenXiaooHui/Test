@@ -31,5 +31,6 @@ payload:
   - '+.pandora.xiaomi.com'
   - '+.market.xiaomi.com'
 
-
+  # KingShot游戏
+  - '+.chosenonegames.com'
 
