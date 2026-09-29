@@ -25,3 +25,5 @@ payload:
   - DOMAIN-SUFFIX,verysync.cn
   - DST-PORT,22067
 
+#  KingShot游戏
+  - DOMAIN-SUFFIX,chosenonegames.com
