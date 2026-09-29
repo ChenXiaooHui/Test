@@ -25,7 +25,7 @@ payload:
   - DOMAIN-SUFFIX,verysync.cn
 
 #  KingShot游戏直连
-  - DOMAIN-SUFFIX,chosenonegames.com
+#  - DOMAIN-SUFFIX,chosenonegames.com
   - DOMAIN-SUFFIX,centurygame.com
   - DOMAIN-SUFFIX,centurygames.com
   - DOMAIN-SUFFIX,centurygame.net
