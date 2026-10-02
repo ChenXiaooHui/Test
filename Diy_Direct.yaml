@@ -24,11 +24,3 @@ payload:
 #  微力同步
   - DOMAIN-SUFFIX,verysync.cn
   - DST-PORT,22067
-
-#  KingShot游戏
-  - DOMAIN-SUFFIX,centurygame.com
-  - DOMAIN-SUFFIX,centurygames.com
-  - DOMAIN-SUFFIX,centurygame.net
-  - DOMAIN-SUFFIX,centurygames.net
-  - DOMAIN-SUFFIX,chosenonegame.com
-  - DOMAIN-SUFFIX,chosenonegames.com
