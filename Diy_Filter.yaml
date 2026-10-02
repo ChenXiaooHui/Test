@@ -36,4 +36,4 @@ payload:
   - '+.centurygames.*'
   - '+.chosenonegame.*'
   - '+.chosenonegames.*'
-  
+  - '+.'
