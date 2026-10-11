@@ -32,6 +32,6 @@ payload:
   - '+.market.xiaomi.com'
 
   # KingShot游戏
-  - '+.centurygame.com'
-  - '+.centurygames.net'
-  - '+.chosenonegames.com'
+  #- '+.centurygame.com'
+  #- '+.centurygames.net'
+  #- '+.chosenonegames.com'
