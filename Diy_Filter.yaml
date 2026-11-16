@@ -35,3 +35,4 @@ payload:
   - '+.centurygame.*'
   - '+.centurygames.*'
   - '+.chosenonegames.*'
+  - '+.ilivedata.*'
